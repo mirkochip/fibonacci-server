@@ -1,0 +1,10 @@
+# Formatting and linting
+isort
+flake8
+
+# Debugging tools
+ipdb
+
+# it generates dynamically the coverage badge
+coverage
+coverage-badge

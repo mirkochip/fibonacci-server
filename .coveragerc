@@ -1,0 +1,14 @@
+[run]
+branch = true
+omit =
+    src/common/config.py
+    src/tests/*
+    src/api/v1/fibonacci/migrations/*
+    */urls.py
+    src/wsgi.py
+    src/asgi.py
+    src/apps.py
+    src/settings.py
+    manage.py
+    setup.py
+    **__init__.py
