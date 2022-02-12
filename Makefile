@@ -26,4 +26,6 @@ test:
 	$(VENV_BIN)/coverage-badge -o coverage.svg
 
 run:
+	$(DEV_PYTHON) manage.py makemigrations fibonacci
+	$(DEV_PYTHON) manage.py migrate
 	$(DEV_PYTHON) manage.py runserver $(PORT)
