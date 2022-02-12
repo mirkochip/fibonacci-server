@@ -85,7 +85,7 @@ The provided `Makefile` offers some "candies" for developers, including useful t
 
 `make run`:  Condensate the execution of the commands listed above into just one command.
 
-### API Endpoints
+## API Endpoints
 
 `GET /`: gets the next Fibonacci sub-sequence item.
 
