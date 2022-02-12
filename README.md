@@ -2,6 +2,7 @@
 
 # Fibonacci Server
 
+## Introdution
 A web server able to calculate, one at a time, the subsequent items in the Fibonacci sequence. 
 
 This server implements a REST API interface and it is configured for listening to incoming HTTP requests made towards the port 8080. For every HTTP request made, it replies with a JSON rendering the next Fibonacci expected value.
