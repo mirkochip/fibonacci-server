@@ -152,6 +152,6 @@ In order to contribute to `fibonacci-server` project, the following steps should
 - once the change is merged into master, make a release creating a tag
 
 ## Notes
-1. The principal `fibonacci-server` endpoint was configured, as requested, to `/`. In order to have better control over API versioning, it would be better to move it to `/api/v1/fibonacci`.  
+1. The principal `fibonacci-server` endpoint was configured, as requested, pointing to `/`. In order to have better control over API versioning, it would be better to point to `/api/v1/fibonacci` instead.  
 2. For sake of simplicity, no standalone webserver (e.g. gunicorn) was installed/configured.
 3. SQLite was used as database. Different solutions (e.g. Django memcached, PostgresSQL) might be used.
