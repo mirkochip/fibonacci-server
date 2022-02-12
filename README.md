@@ -3,7 +3,7 @@
 # Fibonacci Server
 A web server able to calculate, one at a time, the subsequent items in the Fibonacci sequence. 
 
-This server implements a REST API interface and it is configured for listening to incoming HTTP requests made towards the port 8080. For every HTTP request made, it replies with a JSON rendering the next Fibonacci expected value.
+This server implements a REST API interface and it is configured for listening to incoming HTTP requests made towards the port 8080. For every HTTP request made, it replies with a JSON, rendering the next Fibonacci expected value.
 
 Here it is following an example of the first 7 sequential requests and the related expected responses:
 
@@ -70,7 +70,7 @@ The `fibonacci-server` is supposed to be released and then shipped as a Docker i
 
 `docker run {image_hash}`
 
-This will start the server, ready to serve the incoming HTTP requests at `localhost:8080`.
+This will start the server, being ready to serve the incoming HTTP requests sent to `localhost:8080`.
 
 ### Developers 
 For development purposes it is possible to make the DB migration file, applying the required migrations and starting the server running the following commands:
@@ -85,10 +85,14 @@ The provided `Makefile` offers some "candies" for developers, including useful t
 
 `make run`:  Condensate the execution of the commands listed above into just one command.
 
-It will also be possible:
+### API Endpoints
+
+`GET /`: gets the next Fibonacci sub-sequence item.
+
+`DELETE /`: reset the whole sequence, allows playing again from scratch.
 
 ## Unit Tests (and Code Coverage)
-The unit tests have been provided into `src/tests` directory. They aim to cover as much application business logic as possible.
+The unit tests have been provided into `src/tests` directory and aim to cover as much coded business logic as possible.
 
 It is possible to run the battery of unit tests and generating the coverage report using the following command:
 
@@ -96,7 +100,7 @@ It is possible to run the battery of unit tests and generating the coverage repo
 
 The provided `Makefile` contains a useful target for testing:
 
-`make test`: to run the unit tests, generate and print out in stdout the coverage report and refreshing the coverage badge. 
+`make test`: to run the unit tests, generating the coverage report and refreshing the coverage badge. 
 
 Here it is following an outcome of test run and coverage report:
 
@@ -132,7 +136,7 @@ Or, just using the `check` target available in the `Makefile`:
 `make check`
 
 ## Docker
-The `fibonacci-server` application comes along with a `Dockerfile` which allows to ship it as a Docker image based on a `python:3.8-slim` Docker container.
+The `fibonacci-server` application comes along with a `Dockerfile` which allows to ship it as a Docker image based on a `python:3.8-slim` image.
 
 In order to build a new Docker image, run the following command:
 
@@ -148,5 +152,6 @@ In order to contribute to `fibonacci-server` project, the following steps should
 - once the change is merged into master, make a release creating a tag
 
 ## Notes
-Server listening at / and not to api/v1/fibonacci..
-No Webserver configured
+1. The principal `fibonacci-server` endpoint was configured, as requested, to `/`. In order to have better control over API versioning, it would be better to move it to `/api/v1/fibonacci`.  
+2. For sake of simplicity, no standalone webserver (e.g. gunicorn) was installed/configured.
+3. SQLite was used as database. Different solutions (e.g. Django memcached, PostgresSQL) might be used.
