@@ -85,6 +85,8 @@ The provided `Makefile` offers some "candies" for developers, including useful t
 
 `make run`:  Condensate the execution of the commands listed above into just one command.
 
+By default the log level of the application is set to `DEBUG` which, for every request, prints out in the server console the partial Fibonacci sequence. The log level, handler and formatter could be configured into the `LOGGING` section defined in `src/settings.py`.  
+
 ## API Endpoints
 
 `GET /`: gets the next Fibonacci sub-sequence item.
