@@ -68,7 +68,7 @@ The provided `Makefile` could facilitate the operations mentioned above, running
 ### End Users
 The `fibonacci-server` is supposed to be released and then shipped as a Docker image ready to be consumed by the end-users. Provided that, the `fibonacci-server` image was already pulled from a Docker registry (e.g. JFrog, etc.), it will be possible to consume it running the following simple command:
 
-`docker run {image_hash}`
+`docker run -p 8080:8080 {image_hash}`
 
 This will start the server, being ready to serve the incoming HTTP requests sent to `localhost:8080`.
 
